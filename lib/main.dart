@@ -10,42 +10,24 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: ListView(
-          
-          children: [
-            Container(
-              width: 100, 
-              height: 100,
-              color: Colors.red,
-              ),
-              Container(
-              width: 100, 
-              height: 100,
-              color: Colors.deepPurple[600],
-              ),
-              Container(
-              width: 100, 
-              height: 100,
-              color: Colors.blue[400],
-              ),
-              Container(
-              width: 100, 
-              height: 100,
-              color: Colors.green[400],
-              ),
-              Container(
-              width: 100, 
-              height: 100,
-              color: Colors.yellow[400],
-              ),
-          ],
+        backgroundColor: const Color(0xFFA8BEE0),
+        appBar: AppBar(
+          backgroundColor: const Color(0xFF577096),
+          title: const Text(
+            'Family Home',
+            style: TextStyle(
+              color: Color(0xFFA8BEE0),
+            ),
           ),
+        ),
+        body: const Center(
+          child: Text(
+            'Bem Vindo',
+            style: TextStyle(color: Color(0xFF2B3649), fontSize: 30),
+          ),
+        ),
       ),
-      
     );
   }
 }
-
-
