@@ -4,8 +4,16 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  final String nome = 'Nicolas';
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int idade = 17;
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +29,17 @@ class MyApp extends StatelessWidget {
             ),
           ),
         ),
-        body: const Center(
-          child: Text(
-            'Bem Vindo',
-            style: TextStyle(color: Color(0xFF2B3649), fontSize: 30),
+        body: GestureDetector(
+          onTap: () {
+            setState(() {
+              idade = idade + 1;
+            });
+          },
+          child: Center(
+            child: Text(
+              'Bem Vindo ${widget.nome}, $idade anos',
+              style: const TextStyle(color: Color(0xFF2B3649), fontSize: 30),
+            ),
           ),
         ),
       ),
