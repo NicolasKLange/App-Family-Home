@@ -2,7 +2,7 @@
 
 /*
 Azul Escuro             
-//color: Color(0xFF2B3649), 
+color: Color(0xFF2B3649), 
 */
 
 /*
