@@ -5,10 +5,10 @@ class ButtonStyles {
   static final ButtonStyle primaryButton = ElevatedButton.styleFrom(
     backgroundColor: const Color(0xFF577096),
     foregroundColor: const Color(0xFFA8BEE0),
-    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+    padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
     textStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
     shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(10),
+      borderRadius: BorderRadius.circular(12),
     ),
   );
 

@@ -97,6 +97,21 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                       const SizedBox(height: 20),
+                      // Botão de Login
+                      ElevatedButton(
+                        style: ButtonStyles.primaryButton.copyWith(),
+                        onPressed: () {
+                          Navigator.pushReplacementNamed(
+                              context, '/homeScreen');
+                        },
+                        child: const Text('Login'),
+                      ),
+                      const SizedBox(height: 20),
+                      const Text('Doesn’t have a family code?'),
+                      const Text(
+                        'Create family',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      )
                     ],
                   ),
                 ),

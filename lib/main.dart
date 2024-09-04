@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-
 // IMPORTANDO TELAS
 import 'login/login.dart';
+import 'home/home.dart';
 
 //IMPORT PARA UTILIZAR O TIMER
-import 'dart:async'; 
+import 'dart:async';
 
 void main() {
   runApp(const MyApp());
@@ -22,8 +22,9 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         // ROTAS DO APP
-        '/': (context) => const SplashScreen(), 
-        '/loginScreen': (context) => const LoginScreen(), 
+        '/': (context) => const SplashScreen(),
+        '/loginScreen': (context) => const LoginScreen(),
+        '/homeScreen': (context) => const HomeScreen(),
       },
     );
   }
@@ -43,7 +44,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
 
     //INICIA TEMPORIZADOR DE 3 SEGUNDOS PARA ABRIR O APP
-    Future.delayed(const Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 2), () {
       // APÓS OS 3 SEGUNDOS, REDIRECIONA PARA A TELA DE LOGIN
       Navigator.pushReplacementNamed(context, '/loginScreen');
     });
@@ -63,7 +64,7 @@ class _SplashScreenState extends State<SplashScreen> {
               //COR PRINCIPAL DO APP
               color: Color(0xFF577096),
               //TAMANHO DO CÍRCULOA
-              size: 100.0, 
+              size: 100.0,
             ),
             SizedBox(height: 20),
             Text(
