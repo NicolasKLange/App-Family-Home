@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:family_home/assets/button_styles.dart';
 
-//CLASSE DA TELA DE LOGIN
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+//CLASSE DA TELA DE CRIAR FAMÍLIA
+class CreateFamilyScreen extends StatefulWidget {
+  const CreateFamilyScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<CreateFamilyScreen> createState() => _CreatefamilyScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _CreatefamilyScreenState extends State<CreateFamilyScreen> {
   //VISIBILIDADE DA SENHA
   bool _isObscured = true;
 
@@ -54,7 +54,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     children: [
                       const SizedBox(height: 70),
                       const Text(
-                        'Bem vindo!',
+                        'Criar Família',
                         style:
                             TextStyle(fontSize: 24, color: Color(0xFF2B3649)),
                       ),
@@ -63,7 +63,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       //CAMPO DE TEXTO INSERIR NOME
                       TextField(
                         decoration: ButtonStyles.textFieldDecoration.copyWith(
-                          labelText: 'Seu Nome',
+                          labelText: 'Seu nome',
                           prefixIcon: const Icon(Icons.person),
                         ),
                       ),
@@ -72,7 +72,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       //CAMPO DE TEXTO INSERIR NOME CODIGO FAMÍLIA
                       TextField(
                         decoration: ButtonStyles.textFieldDecoration.copyWith(
-                          labelText: 'Código da Familia',
+                          labelText: 'Código da Família',
                           prefixIcon: const Icon(Icons.qr_code_2),
                         ),
                       ),
@@ -99,41 +99,36 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ),
                       ),
+                      const SizedBox(height: 16),
+                      //CAMPO DE TEXTO INSERIR SENHA
+                      TextField(
+                        obscureText: _isObscured,
+                        decoration: ButtonStyles.textFieldDecoration.copyWith(
+                          labelText: 'Confirmar Senha',
+                          prefixIcon: const Icon(Icons.lock),
+                          //VISUALIZAR SENHA
+                          suffixIcon: IconButton(
+                            icon: Icon(
+                              _isObscured
+                                  ? Icons.visibility
+                                  : Icons.visibility_off,
+                            ),
+                            onPressed: () {
+                              setState(() {
+                                _isObscured = !_isObscured;
+                              });
+                            },
+                          ),
+                        ),
+                      ),
                       const SizedBox(height: 40),
                       // Botão de Login
                       ElevatedButton(
                         style: ButtonStyles.primaryButton.copyWith(),
                         onPressed: () {
-                          Navigator.pushReplacementNamed(
-                              context, '/homeScreen');
+                          Navigator.pushReplacementNamed(context, '/');
                         },
-                        child: const Text('Entrar'),
-                      ),
-                      const SizedBox(height: 40),
-                      // Texto alinhado à esquerda
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text(
-                              "Não possui um código de família?",
-                              style: TextStyle(fontSize: 17),
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                // Navegar para a tela create family
-                                Navigator.pushNamed(
-                                    context, '/createFamilyScreen');
-                              },
-                              child: const Text(
-                                "Criar Familia",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 17),
-                              ),
-                            ),
-                          ],
-                        ),
+                        child: const Text('Criar'),
                       ),
                     ],
                   ),

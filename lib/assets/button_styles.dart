@@ -34,7 +34,7 @@ class ButtonStyles {
   // Estilo para TextField
   static final InputDecoration textFieldDecoration = InputDecoration(
     filled: true,
-    fillColor: Color(0xFFEDE8E8),
+    fillColor: const Color(0xFFEDE8E8),
     labelStyle: const TextStyle(color: Color(0xFF2B3649)),
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(10),
@@ -49,5 +49,12 @@ class ButtonStyles {
       borderSide: const BorderSide(color: Color(0xFF577096)),
     ),
     prefixIconColor: const Color(0xFF577096),
+  );
+
+  // Estilo principal texto, para nome da tela
+  static const TextStyle sectionTitleStyle = TextStyle(
+    fontSize: 26,
+    fontWeight: FontWeight.bold,
+    color: Color(0xFF2B3649),
   );
 }

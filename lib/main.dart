@@ -4,6 +4,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 // IMPORTANDO TELAS
 import 'login/login.dart';
 import 'home/home.dart';
+import 'login/createFamily.dart';
 
 //IMPORT PARA UTILIZAR O TIMER
 import 'dart:async';
@@ -24,7 +25,8 @@ class MyApp extends StatelessWidget {
         // ROTAS DO APP
         '/': (context) => const SplashScreen(),
         '/loginScreen': (context) => const LoginScreen(),
-        '/homeScreen': (context) => const HomeScreen(),
+        '/homeScreen': (context) => const DashboardScreen(),
+        '/createFamilyScreen': (context) => const CreateFamilyScreen(),
       },
     );
   }
