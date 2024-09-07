@@ -27,6 +27,7 @@ class DashboardScreen extends StatelessWidget {
               ),
               //BORDA ARREDONDADA
               Container(
+                width: double.infinity,
                 height: MediaQuery.of(context).size.height * 0.9,
                 decoration: const BoxDecoration(
                   //COR FUNDO PARTE INFERIOR
@@ -58,20 +59,20 @@ class DashboardScreen extends StatelessWidget {
                         //CARDS DAS FUNCIONAILIDADES DO APP
                         children: [
                           ///MUDAR ROTAS
-                          _buildDashboardButton(
-                              context, 'Tarefas', Icons.task_alt, '/client'),
+                          _buildDashboardButton(context, 'Tarefas',
+                              Icons.task_alt, '/tasksScreen'),
 
                           ///MUDAR ROTAS
                           _buildDashboardButton(context, 'Compras',
-                              Icons.shopping_bag, '/manager'),
+                              Icons.shopping_bag, '/shoppingScreen'),
 
                           ///MUDAR ROTAS
                           _buildDashboardButton(
-                              context, 'Eventos', Icons.event, '/vehicle'),
+                              context, 'Eventos', Icons.event, '/eventsScreen'),
 
                           ///MUDAR ROTAS
                           _buildDashboardButton(context, 'Futuros',
-                              Icons.sim_card_alert, '/client'),
+                              Icons.sim_card_alert, '/futureScreen'),
                         ],
                       ),
                     ),

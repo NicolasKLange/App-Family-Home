@@ -25,19 +25,20 @@ class _CreatefamilyScreenState extends State<CreateFamilyScreen> {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 70, bottom: 10),
+                padding: const EdgeInsets.only(top: 50, bottom: 20),
                 child: Image.asset(
                   'lib/assets/icons/logo.png',
-                  height: 150,
-                  width: 150,
+                  height: 160,
+                  width: 160,
                   fit: BoxFit.cover,
                 ),
               ),
               //BORDA ARREDONDADA
               Container(
+                width: double
+                    .infinity, // GARANTE QUE O CONTAINER OCUPA TODA A TELA
                 height: MediaQuery.of(context).size.height * 0.7,
                 decoration: const BoxDecoration(
-                  //COR FUNDO PARTE INFERIOR
                   color: Color(0xFFA8BEE0),
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.elliptical(400, 200),
@@ -47,9 +48,7 @@ class _CreatefamilyScreenState extends State<CreateFamilyScreen> {
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Column(
-                    //ALINHAR AO COMEÇO DA PÁGINA VERTICAL
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    //ALINHAR AO CENTRO DA PÁGINA HORIZONTAL
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       const SizedBox(height: 70),
@@ -61,63 +60,79 @@ class _CreatefamilyScreenState extends State<CreateFamilyScreen> {
                       const SizedBox(height: 50),
 
                       //CAMPO DE TEXTO INSERIR NOME
-                      TextField(
-                        decoration: ButtonStyles.textFieldDecoration.copyWith(
-                          labelText: 'Seu nome',
-                          prefixIcon: const Icon(Icons.person),
+                      SizedBox(
+                        width: 320,
+                        height: 60,
+                        child: TextField(
+                          decoration: ButtonStyles.textFieldDecoration.copyWith(
+                            labelText: 'Seu nome',
+                            prefixIcon: const Icon(Icons.person),
+                          ),
                         ),
                       ),
                       const SizedBox(height: 16),
 
                       //CAMPO DE TEXTO INSERIR NOME CODIGO FAMÍLIA
-                      TextField(
-                        decoration: ButtonStyles.textFieldDecoration.copyWith(
-                          labelText: 'Código da Família',
-                          prefixIcon: const Icon(Icons.qr_code_2),
+                      SizedBox(
+                        width: 320,
+                        height: 60,
+                        child: TextField(
+                          decoration: ButtonStyles.textFieldDecoration.copyWith(
+                            labelText: 'Código da Família',
+                            prefixIcon: const Icon(Icons.qr_code_2),
+                          ),
                         ),
                       ),
                       const SizedBox(height: 16),
 
                       //CAMPO DE TEXTO INSERIR SENHA
-                      TextField(
-                        obscureText: _isObscured,
-                        decoration: ButtonStyles.textFieldDecoration.copyWith(
-                          labelText: 'Senha',
-                          prefixIcon: const Icon(Icons.lock),
-                          //VISUALIZAR SENHA
-                          suffixIcon: IconButton(
-                            icon: Icon(
-                              _isObscured
-                                  ? Icons.visibility
-                                  : Icons.visibility_off,
+                      SizedBox(
+                        width: 320,
+                        height: 60,
+                        child: TextField(
+                          obscureText: _isObscured,
+                          decoration: ButtonStyles.textFieldDecoration.copyWith(
+                            labelText: 'Senha',
+                            prefixIcon: const Icon(Icons.lock),
+                            //VISUALIZAR SENHA
+                            suffixIcon: IconButton(
+                              icon: Icon(
+                                _isObscured
+                                    ? Icons.visibility
+                                    : Icons.visibility_off,
+                              ),
+                              onPressed: () {
+                                setState(() {
+                                  _isObscured = !_isObscured;
+                                });
+                              },
                             ),
-                            onPressed: () {
-                              setState(() {
-                                _isObscured = !_isObscured;
-                              });
-                            },
                           ),
                         ),
                       ),
                       const SizedBox(height: 16),
                       //CAMPO DE TEXTO INSERIR SENHA
-                      TextField(
-                        obscureText: _isObscured,
-                        decoration: ButtonStyles.textFieldDecoration.copyWith(
-                          labelText: 'Confirmar Senha',
-                          prefixIcon: const Icon(Icons.lock),
-                          //VISUALIZAR SENHA
-                          suffixIcon: IconButton(
-                            icon: Icon(
-                              _isObscured
-                                  ? Icons.visibility
-                                  : Icons.visibility_off,
+                      SizedBox(
+                        width: 320,
+                        height: 60,
+                        child: TextField(
+                          obscureText: _isObscured,
+                          decoration: ButtonStyles.textFieldDecoration.copyWith(
+                            labelText: 'Confirmar Senha',
+                            prefixIcon: const Icon(Icons.lock),
+                            //VISUALIZAR SENHA
+                            suffixIcon: IconButton(
+                              icon: Icon(
+                                _isObscured
+                                    ? Icons.visibility
+                                    : Icons.visibility_off,
+                              ),
+                              onPressed: () {
+                                setState(() {
+                                  _isObscured = !_isObscured;
+                                });
+                              },
                             ),
-                            onPressed: () {
-                              setState(() {
-                                _isObscured = !_isObscured;
-                              });
-                            },
                           ),
                         ),
                       ),

@@ -2,11 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 // IMPORTANDO TELAS
-import 'login/login.dart';
-import 'home/home.dart';
-import 'login/createFamily.dart';
+import './login/login.dart';
+import './home/home.dart';
+import './login/createFamily.dart';
+import './services/tasks/tasks.dart';
+import './services/shopping/shopping.dart';
+import './services/events/events.dart';
+import './services/future/future.dart';
 
-//IMPORT PARA UTILIZAR O TIMER
+//IMPORT PARA UTILIZAR O TIMER DO CARREGANDO
 import 'dart:async';
 
 void main() {
@@ -27,6 +31,10 @@ class MyApp extends StatelessWidget {
         '/loginScreen': (context) => const LoginScreen(),
         '/homeScreen': (context) => const DashboardScreen(),
         '/createFamilyScreen': (context) => const CreateFamilyScreen(),
+        '/tasksScreen': (context) => const TasksScreen(),
+        '/shoppingScreen': (context) => const ShoppingScreen(),
+        '/eventsScreen': (context) => const EventsScreen(),
+        '/futureScreen': (context) => const FutureScreen(),
       },
     );
   }

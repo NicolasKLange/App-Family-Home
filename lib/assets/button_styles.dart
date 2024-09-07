@@ -8,7 +8,7 @@ class ButtonStyles {
     padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
     textStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
     shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(12),
+      borderRadius: BorderRadius.circular(15),
     ),
   );
 
@@ -20,14 +20,14 @@ class ButtonStyles {
     textStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
     side: const BorderSide(color: Color(0xFF577096), width: 2),
     shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(10),
+      borderRadius: BorderRadius.circular(15),
     ),
   );
 
   // Estilo para botões de texto
   static final ButtonStyle textButton = TextButton.styleFrom(
     backgroundColor: const Color(0xFF577096),
-    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
     textStyle: const TextStyle(fontSize: 16),
   );
 
@@ -37,15 +37,15 @@ class ButtonStyles {
     fillColor: const Color(0xFFEDE8E8),
     labelStyle: const TextStyle(color: Color(0xFF2B3649)),
     border: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(10),
+      borderRadius: BorderRadius.circular(15),
       borderSide: const BorderSide(color: Color(0xFFEDE8E8)),
     ),
     enabledBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(10),
+      borderRadius: BorderRadius.circular(15),
       borderSide: const BorderSide(color: Color(0xFFEDE8E8)),
     ),
     errorBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(10),
+      borderRadius: BorderRadius.circular(15),
       borderSide: const BorderSide(color: Color(0xFF577096)),
     ),
     prefixIconColor: const Color(0xFF577096),
@@ -54,6 +54,13 @@ class ButtonStyles {
   // Estilo principal texto, para nome da tela
   static const TextStyle sectionTitleStyle = TextStyle(
     fontSize: 26,
+    fontWeight: FontWeight.bold,
+    color: Color(0xFF2B3649),
+  );
+
+  // Estilo secundario texto, para nome da tela
+  static const TextStyle sectionTitleStyleSec = TextStyle(
+    fontSize: 22,
     fontWeight: FontWeight.bold,
     color: Color(0xFF2B3649),
   );
