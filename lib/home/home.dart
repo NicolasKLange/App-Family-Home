@@ -59,20 +59,20 @@ class DashboardScreen extends StatelessWidget {
                         //CARDS DAS FUNCIONAILIDADES DO APP
                         children: [
                           ///MUDAR ROTAS
-                          _buildDashboardButton(context, 'Tarefas',
-                              Icons.task_alt, '/tasksScreen'),
+                          _buildDashboardButton(
+                              context, 'Tarefas', Icons.list, '/tasksScreen'),
 
                           ///MUDAR ROTAS
                           _buildDashboardButton(context, 'Compras',
-                              Icons.shopping_bag, '/shoppingScreen'),
+                              Icons.shopping_cart_outlined, '/shoppingScreen'),
 
                           ///MUDAR ROTAS
                           _buildDashboardButton(
                               context, 'Eventos', Icons.event, '/eventsScreen'),
 
                           ///MUDAR ROTAS
-                          _buildDashboardButton(context, 'Futuros',
-                              Icons.sim_card_alert, '/futureScreen'),
+                          _buildDashboardButton(context, 'Avisos',
+                              Icons.report_problem_outlined, '/noticesScreen'),
                         ],
                       ),
                     ),
@@ -81,6 +81,62 @@ class DashboardScreen extends StatelessWidget {
               ),
             ],
           ),
+        ),
+      ),
+
+      //NAVIGATIONBAR DA TELA
+      bottomNavigationBar: NavigationBarTheme(
+        //CUSTOMIZAR O TEMA DA NAVIGATIONBAR
+        data: const NavigationBarThemeData(
+          //EDITANDO ICONS NAVIGATIONBAR
+          iconTheme: WidgetStatePropertyAll(
+            IconThemeData(
+              size: 30,
+              color: Color(0xFFEDE8E8),
+            ),
+          ),
+          //INDICADOR DE SELECIONADO
+          indicatorColor: Color.fromARGB(99, 255, 255, 255),
+          backgroundColor: Color(0xFF577096),
+          //EDITANDO TEXTO NAVIGATIONBAR
+          labelTextStyle: WidgetStatePropertyAll(
+            TextStyle(
+              fontSize: 15,
+              color: Color(0xFFEDE8E8),
+            ),
+          ),
+        ),
+        child: NavigationBar(
+          destinations: const [
+            NavigationDestination(
+                icon: Icon(
+                  Icons.miscellaneous_services_rounded,
+                ),
+                // MUDA O ICON OU COR QUANDO ESTIVER SELECIONADO
+                selectedIcon: Icon(
+                  Icons.miscellaneous_services_rounded,
+                  color: Color(0xFF577096),
+                ),
+                label: "Funcionalidades"),
+            NavigationDestination(
+                icon: Icon(
+                  Icons.calendar_month_outlined,
+                ),
+                selectedIcon: Icon(
+                  Icons.calendar_month,
+                  color: Color(0xFF577096),
+                ),
+                label: "Calendário"),
+            NavigationDestination(
+                icon: Icon(
+                  Icons.person_2_outlined,
+                ),
+                selectedIcon: Icon(
+                  Icons.person_2,
+                  color: Color(0xFF577096),
+                ),
+                label: "Perfil"),
+          ],
         ),
       ),
     );

@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import '../../assets/button_styles.dart';
 
 // CLASSE DA TELA DE LOGIN
-class FutureScreen extends StatefulWidget {
-  const FutureScreen({super.key});
+class NoticesScreen extends StatefulWidget {
+  const NoticesScreen({super.key});
 
   @override
-  State<FutureScreen> createState() => _FutureScreenState();
+  State<NoticesScreen> createState() => _NoticesScreenState();
 }
 
-class _FutureScreenState extends State<FutureScreen> {
+class _NoticesScreenState extends State<NoticesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,7 +60,7 @@ class _FutureScreenState extends State<FutureScreen> {
                           
                           const SizedBox(width: 100),
                           const Text(
-                            "FUTUROS",
+                            "Avisos",
                             style: ButtonStyles.sectionTitleStyleSec,
                           ),
                         ],

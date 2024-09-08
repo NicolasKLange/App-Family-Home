@@ -8,7 +8,7 @@ import './login/createFamily.dart';
 import './services/tasks/tasks.dart';
 import './services/shopping/shopping.dart';
 import './services/events/events.dart';
-import './services/future/future.dart';
+import './services/notices/notices.dart';
 
 //IMPORT PARA UTILIZAR O TIMER DO CARREGANDO
 import 'dart:async';
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
         '/tasksScreen': (context) => const TasksScreen(),
         '/shoppingScreen': (context) => const ShoppingScreen(),
         '/eventsScreen': (context) => const EventsScreen(),
-        '/futureScreen': (context) => const FutureScreen(),
+        '/noticesScreen': (context) => const NoticesScreen(),
       },
     );
   }
