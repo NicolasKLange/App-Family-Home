@@ -9,6 +9,7 @@ import './services/tasks/tasks.dart';
 import './services/shopping/shopping.dart';
 import './services/events/events.dart';
 import './services/notices/notices.dart';
+import './services/location/location.dart';
 
 //IMPORT PARA UTILIZAR O TIMER DO CARREGANDO
 import 'dart:async';
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
         '/shoppingScreen': (context) => const ShoppingScreen(),
         '/eventsScreen': (context) => const EventsScreen(),
         '/noticesScreen': (context) => const NoticesScreen(),
+        '/locationScreen': (context) => const LocationScreen(),
       },
     );
   }

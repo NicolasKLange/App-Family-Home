@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../assets/button_styles.dart';
+import 'package:family_home/assets/button_styles.dart';
+import 'package:family_home/assets/customNavigationBar.dart';
+import 'package:family_home/assets/customHeader.dart';
 
-// CLASSE DA TELA DE LOGIN
 class EventsScreen extends StatefulWidget {
   const EventsScreen({super.key});
 
@@ -10,70 +11,56 @@ class EventsScreen extends StatefulWidget {
 }
 
 class _EventsScreenState extends State<EventsScreen> {
+  int _selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //TOPO TELA
       backgroundColor: const Color(0xFF577096),
-      body: SafeArea(
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: CustomScreenHeader(
+          imagePath: 'lib/assets/icons/logo.png',
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 20, bottom: 20, left: 20),
-                child: Image.asset(
-                  'lib/assets/icons/logo.png',
-                  height: 100,
-                  width: 100,
-                  fit: BoxFit.cover,
-                ),
-              ),
-              //BORDA ARREDONDADA
-              Container(
-                width: double.infinity,
-                height: MediaQuery.of(context).size.height * 0.9,
-                decoration: const BoxDecoration(
-                  //COR FUNDO PARTE INFERIOR
-                  color: Color(0xFFA8BEE0),
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20),
-                    topRight: Radius.circular(20),
+              //ROW PARA COLOCAR O BOTAO DE VOLTAR
+              Row(
+                children: [
+                  const SizedBox(
+                    width: 30,
                   ),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      //ROW PARA COLOCAR O BOTAO DE VOLTAR
-                      //ROW PARA COLOCAR O BOTAO DE VOLTAR
-                      Row(
-                        children: [
-                          IconButton(
-                            icon: const Icon(Icons.arrow_back),
-                            color: const Color(0xFF2B3649),
-                            onPressed: () {
-                              Navigator.pop(
-                                  context); // Voltar para a página anterior
-                            },
-                          ),
-                          const SizedBox(
-                            width: 90,
-                          ),
-                          const Text(
-                            "EVENTOS",
-                            style: ButtonStyles.sectionTitleStyleSec,
-                          ),
-                        ],
-                      ),
-                    ],
+                  IconButton(
+                    icon: const Icon(Icons.arrow_back),
+                    color: const Color(0xFF2B3649),
+                    onPressed: () {
+                      Navigator.pop(context); // Voltar para a página anterior
+                    },
                   ),
-                ),
+                  const SizedBox(
+                    width: 90,
+                    height: 80,
+                  ),
+                  const Text(
+                    "Eventos",
+                    style: ButtonStyles.sectionTitleStyleSec,
+                  ),
+                ],
               ),
+              // Conteúdo da tela de tarefas aqui...
             ],
           ),
         ),
+      ),
+      // Adicionando a CustomBottomNavigationBar
+      bottomNavigationBar: CustomBottomNavigationBar(
+        selectedIndex: _selectedIndex,
+        onDestinationSelected: (int index) {
+          setState(
+            () {
+              _selectedIndex = index;
+              // Atualize a navegação aqui se necessário
+            },
+          );
+        },
       ),
     );
   }

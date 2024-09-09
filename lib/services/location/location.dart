@@ -3,14 +3,14 @@ import 'package:family_home/assets/button_styles.dart';
 import 'package:family_home/assets/customNavigationBar.dart';
 import 'package:family_home/assets/customHeader.dart';
 
-class ShoppingScreen extends StatefulWidget {
-  const ShoppingScreen({super.key});
+class LocationScreen extends StatefulWidget {
+  const LocationScreen({super.key});
 
   @override
-  State<ShoppingScreen> createState() => _ShoppingScreenState();
+  State<LocationScreen> createState() => _LocationScreenState();
 }
 
-class _ShoppingScreenState extends State<ShoppingScreen> {
+class _LocationScreenState extends State<LocationScreen> {
   int _selectedIndex = 0;
 
   @override
@@ -36,11 +36,11 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                     },
                   ),
                   const SizedBox(
-                    width: 40,
+                    width: 70,
                     height: 80,
                   ),
                   const Text(
-                    "Lista de Compras",
+                    "Localização",
                     style: ButtonStyles.sectionTitleStyleSec,
                   ),
                 ],
