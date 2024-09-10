@@ -32,7 +32,7 @@ class _LocationScreenState extends State<LocationScreen> {
                     icon: const Icon(Icons.arrow_back),
                     color: const Color(0xFF2B3649),
                     onPressed: () {
-                      Navigator.pop(context); // Voltar para a página anterior
+                      Navigator.pushNamed(context, '/homeScreen');
                     },
                   ),
                   const SizedBox(

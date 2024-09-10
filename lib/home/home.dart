@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:family_home/assets/button_styles.dart';
-import 'package:family_home/assets/customNavigationBar.dart'; // Importe o arquivo que você acabou de criar
+import 'package:family_home/assets/customNavigationBar.dart'; // Custom BottomNavigationBar
 import 'package:family_home/assets/customHeader.dart';
 
-//IMPORTANDO TELAS PARA NAVIGATIONBAR
+// Importando as telas
 import '../calendar/calendar.dart';
 import '../profile/profile.dart';
+import '../services/tasks/tasks.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -28,10 +29,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
           FuncionalidadesScreen(),
           CalendarScreen(),
           ProfileScreen(),
+          TasksScreen(),
         ],
       ),
 
-      // Usando a CustomBottomNavigationBar do
+      // Usando a CustomBottomNavigationBar
       bottomNavigationBar: CustomBottomNavigationBar(
         selectedIndex: _opcaoSelecionada,
         onDestinationSelected: (int index) {
@@ -100,7 +102,8 @@ class FuncionalidadesScreen extends StatelessWidget {
       ),
       child: InkWell(
         onTap: () {
-          Navigator.pushNamed(context, route);
+          Navigator.pushNamed(
+              context, route); 
         },
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
