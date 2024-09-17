@@ -102,8 +102,7 @@ class FuncionalidadesScreen extends StatelessWidget {
       ),
       child: InkWell(
         onTap: () {
-          Navigator.pushNamed(
-              context, route); 
+          Navigator.pushNamed(context, route);
         },
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

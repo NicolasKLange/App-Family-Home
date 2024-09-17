@@ -1,7 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:family_home/assets/button_styles.dart';
-import 'package:family_home/assets/customNavigationBar.dart';
+
 import 'package:family_home/assets/customHeader.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:intl/intl.dart';
+
+class Tasks extends StatelessWidget {
+  
+  const Tasks({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Family Home',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('pt', 'BR'),
+      ],
+      home: const TasksScreen(),
+    );
+  }
+}
 
 class TasksScreen extends StatefulWidget {
   const TasksScreen({super.key});
@@ -11,7 +38,9 @@ class TasksScreen extends StatefulWidget {
 }
 
 class _TasksScreenState extends State<TasksScreen> {
-  int _selectedIndex = 0;
+  // VARIÁVEL PARA COLOCAR O DIA DE HOJE
+  final data =
+      DateFormat("d 'de' MMMM 'de' yyyy", 'pt_BR').format(DateTime.now());
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +51,7 @@ class _TasksScreenState extends State<TasksScreen> {
           imagePath: 'lib/assets/icons/logo.png',
           child: Column(
             children: [
-              //ROW PARA COLOCAR O BOTAO DE VOLTAR
+              // ROW PARA COLOCAR O BOTÃO DE VOLTAR
               Row(
                 children: [
                   const SizedBox(
@@ -37,32 +66,26 @@ class _TasksScreenState extends State<TasksScreen> {
                     },
                   ),
                   const SizedBox(
-                    width: 90,
+                    width: 25,
                     height: 80,
                   ),
-                  const Text(
-                    "Tarefas",
+                  Text(
+                    data,
                     style: ButtonStyles.sectionTitleStyleSec,
                   ),
                 ],
               ),
-              // Conteúdo da tela de tarefas aqui...
+              const Row(
+                children: [
+                  Text(
+                    "Tarefas",
+                    style: ButtonStyles.sectionTitleStyleSec,
+                  )
+                ],
+              ),
             ],
           ),
         ),
-      ),
-
-      // Adicionando a CustomBottomNavigationBar
-      bottomNavigationBar: CustomBottomNavigationBar(
-        selectedIndex: _selectedIndex,
-        onDestinationSelected: (int index) {
-          setState(
-            () {
-              _selectedIndex = index;
-              // Atualize a navegação aqui se necessário
-            },
-          );
-        },
       ),
     );
   }

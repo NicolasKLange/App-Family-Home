@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:intl/date_symbol_data_local.dart';
+import 'dart:async';
 
 // IMPORTANDO TELAS
 import './login/login.dart';
@@ -11,10 +14,13 @@ import './services/events/events.dart';
 import './services/notices/notices.dart';
 import './services/location/location.dart';
 
-//IMPORT PARA UTILIZAR O TIMER DO CARREGANDO
-import 'dart:async';
+void main() async {
+  // INICIALIZA OPERAÇÕES ASSÍNCRONAS
+  WidgetsFlutterBinding.ensureInitialized();
 
-void main() {
+  // INICIALIZA FORMATAÇÃO DE DATA PARA O PORTUGUÊS
+  await initializeDateFormatting('pt_BR', null);
+
   runApp(const MyApp());
 }
 
@@ -24,6 +30,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // MÚLTIPLAS LOCALIZAÇÕES, INTERNACIONALIZAÇÃO
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('pt', 'BR'), // LOCAL = BRASIL/PORTUGUÊS
+      ],
+
       // ROTA PRINCIPAL QUANDO INICIALIZA O APP
       initialRoute: '/',
       routes: {
@@ -42,7 +58,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// TELA DE CARREGAMENTO (Splash Screen)
+// TELA DE CARREGAMENTO
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -55,9 +71,9 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
 
-    //INICIA TEMPORIZADOR DE 3 SEGUNDOS PARA ABRIR O APP
+    // INICIA TEMPORIZADOR DE 2 SEGUNDOS PARA ABRIR O APP
     Future.delayed(const Duration(seconds: 2), () {
-      // APÓS OS 3 SEGUNDOS, REDIRECIONA PARA A TELA DE LOGIN
+      // APÓS OS 2 SEGUNDOS, REDIRECIONA PARA A TELA DE LOGIN
       Navigator.pushReplacementNamed(context, '/loginScreen');
     });
   }
@@ -71,11 +87,11 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            //ANIMAÇÃO DE CARREGAMENTO
+            // ANIMAÇÃO DE CARREGAMENTO
             SpinKitCircle(
-              //COR PRINCIPAL DO APP
+              // COR PRINCIPAL DO APP
               color: Color(0xFF577096),
-              //TAMANHO DO CÍRCULOA
+              // TAMANHO DO CÍRCULO
               size: 100.0,
             ),
             SizedBox(height: 20),

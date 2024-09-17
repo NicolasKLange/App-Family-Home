@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:family_home/assets/button_styles.dart';
-import 'package:family_home/assets/customNavigationBar.dart';
 import 'package:family_home/assets/customHeader.dart';
 
 class LocationScreen extends StatefulWidget {
@@ -11,8 +10,7 @@ class LocationScreen extends StatefulWidget {
 }
 
 class _LocationScreenState extends State<LocationScreen> {
-  int _selectedIndex = 0;
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,18 +47,6 @@ class _LocationScreenState extends State<LocationScreen> {
             ],
           ),
         ),
-      ),
-      // Adicionando a CustomBottomNavigationBar
-      bottomNavigationBar: CustomBottomNavigationBar(
-        selectedIndex: _selectedIndex,
-        onDestinationSelected: (int index) {
-          setState(
-            () {
-              _selectedIndex = index;
-              // Atualize a navegação aqui se necessário
-            },
-          );
-        },
       ),
     );
   }

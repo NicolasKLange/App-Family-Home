@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:family_home/assets/button_styles.dart';
-import 'package:family_home/assets/customNavigationBar.dart';
 import 'package:family_home/assets/customHeader.dart';
 
 class ShoppingScreen extends StatefulWidget {
@@ -11,8 +10,6 @@ class ShoppingScreen extends StatefulWidget {
 }
 
 class _ShoppingScreenState extends State<ShoppingScreen> {
-  int _selectedIndex = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,18 +46,6 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
             ],
           ),
         ),
-      ),
-      // Adicionando a CustomBottomNavigationBar
-      bottomNavigationBar: CustomBottomNavigationBar(
-        selectedIndex: _selectedIndex,
-        onDestinationSelected: (int index) {
-          setState(
-            () {
-              _selectedIndex = index;
-              // Atualize a navegação aqui se necessário
-            },
-          );
-        },
       ),
     );
   }

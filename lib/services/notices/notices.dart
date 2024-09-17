@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:family_home/assets/button_styles.dart';
-import 'package:family_home/assets/customNavigationBar.dart';
 import 'package:family_home/assets/customHeader.dart';
 
 class NoticesScreen extends StatefulWidget {
@@ -11,8 +10,6 @@ class NoticesScreen extends StatefulWidget {
 }
 
 class _NoticesScreenState extends State<NoticesScreen> {
-  int _selectedIndex = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,18 +47,6 @@ class _NoticesScreenState extends State<NoticesScreen> {
             ],
           ),
         ),
-      ),
-      // Adicionando a CustomBottomNavigationBar
-      bottomNavigationBar: CustomBottomNavigationBar(
-        selectedIndex: _selectedIndex,
-        onDestinationSelected: (int index) {
-          setState(
-            () {
-              _selectedIndex = index;
-              // Atualize a navegação aqui se necessário
-            },
-          );
-        },
       ),
     );
   }
