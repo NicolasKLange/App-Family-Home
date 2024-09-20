@@ -118,16 +118,10 @@ class _TasksScreenState extends State<TasksScreen> {
                   ),
                 ],
               ),
-              const Row(
-                children: [
-                  SizedBox(
-                    height: 20,
-                  ),
-                ],
-              ),
+
               // LISTA COM OS DIAS DO MÊS
               SizedBox(
-                height: 80,
+                height: 90,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   controller: _scrollController,
@@ -151,13 +145,14 @@ class _TasksScreenState extends State<TasksScreen> {
                                 _selectedDay = day;
                               });
                             },
+
                       child: Container(
-                        width: 60,
+                        width: 65,
                         margin: const EdgeInsets.symmetric(horizontal: 5),
                         decoration: BoxDecoration(
                           // COR PARA OS DIAS
                           color: _selectedDay == day
-                              ? Colors.blue
+                              ? const Color(0xFFA8BEE0)
                               : isPast
                                   ? Colors.grey[300]
                                   : const Color(0xFFEDE8E8),
@@ -166,6 +161,18 @@ class _TasksScreenState extends State<TasksScreen> {
                             color: const Color(0xFF2B3649),
                             width: 2,
                           ),
+                          // Sombra arredondada que não fica reta em cima ou embaixo
+                          boxShadow: [
+                            BoxShadow(
+                              color: const Color(0xFF2B3649)
+                                  .withOpacity(0.3), // Sombra mais suave
+                              spreadRadius:
+                                  -2, // Faz com que a sombra não fique nas bordas superiores
+                              blurRadius: 10, // Desfoca a sombra
+                              offset: const Offset(
+                                  0, 8), // Desloca a sombra apenas para baixo
+                            ),
+                          ],
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -175,12 +182,12 @@ class _TasksScreenState extends State<TasksScreen> {
                               DateFormat.E('pt_BR').format(dayDate),
                               style: TextStyle(
                                 color: _selectedDay == day
-                                    ? const Color(0xFFEDE8E8)
+                                    ? const Color(0xFF2B3649)
                                     : isPast
                                         ? Colors.grey
                                         : const Color(0xFF2B3649),
                                 fontWeight: FontWeight.bold,
-                                fontSize: 17,
+                                fontSize: 18,
                               ),
                             ),
                             // NÚMERO DO DIA
@@ -188,7 +195,7 @@ class _TasksScreenState extends State<TasksScreen> {
                               day.toString(),
                               style: TextStyle(
                                 color: _selectedDay == day
-                                    ? const Color(0xFFEDE8E8)
+                                    ? const Color(0xFF2B3649)
                                     : isPast
                                         ? Colors.grey
                                         : const Color(0xFF2B3649),
@@ -207,7 +214,7 @@ class _TasksScreenState extends State<TasksScreen> {
               Row(
                 children: [
                   const SizedBox(
-                    width: 25,
+                    width: 40,
                     height: 100,
                   ),
                   const Text(
@@ -215,7 +222,7 @@ class _TasksScreenState extends State<TasksScreen> {
                     style: ButtonStyles.sectionTitleStyleSec,
                   ),
                   const SizedBox(
-                    width: 25,
+                    width: 180,
                   ),
                   IconButton(
                     icon: const Icon(Icons.add),

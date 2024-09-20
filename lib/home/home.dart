@@ -63,14 +63,13 @@ class FuncionalidadesScreen extends StatelessWidget {
                 style: ButtonStyles.sectionTitleStyle,
               ),
             ),
-            const SizedBox(height: 10),
             Expanded(
               child: GridView.count(
                 crossAxisCount: 2,
-                crossAxisSpacing: 20,
-                mainAxisSpacing: 14,
+                crossAxisSpacing: 18,
+                mainAxisSpacing: 18,
                 shrinkWrap: true,
-                padding: const EdgeInsets.all(20),
+                padding: const EdgeInsets.all(40),
                 childAspectRatio: 1,
                 children: [
                   _buildDashboardButton(
@@ -94,11 +93,19 @@ class FuncionalidadesScreen extends StatelessWidget {
 
   Widget _buildDashboardButton(
       BuildContext context, String title, IconData icon, String route) {
-    return Card(
-      color: const Color(0xFFD7D6D4),
-      shape: RoundedRectangleBorder(
+    return Container(
+      decoration: BoxDecoration(
+        color: const Color(0xFFEDE8E8),
         borderRadius: BorderRadius.circular(15.0),
-        side: const BorderSide(color: Color(0xFF2B3649), width: 2),
+        border: Border.all(color: const Color(0xFF2B3649), width: 2),
+        //COLOCANDO SOMBRA PARA PARECER FLUTURAR
+        boxShadow: [
+          BoxShadow(
+            color: const Color(0xFF2B3649).withOpacity(0.4),
+            spreadRadius: 2,
+            blurRadius: 10,
+          ),
+        ],
       ),
       child: InkWell(
         onTap: () {
