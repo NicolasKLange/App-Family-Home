@@ -51,16 +51,14 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                   padding: const EdgeInsets.all(40),
                   childAspectRatio: 1,
                   children: [
-                    _buildDashboardButton(
-                        context, 'Mercado', Icons.abc, '/supermarketScreen'),
+                    _buildDashboardButton(context, 'Mercado', Icons.fastfood,
+                        '/supermarketScreen'),
                     _buildDashboardButton(context, 'Farmácia',
                         Icons.local_pharmacy_rounded, '/pharmacyScreen'),
                     _buildDashboardButton(
                         context, 'Escola', Icons.school, '/schoolScreen'),
-                    _buildDashboardButton(context, 'Roupas',
-                        Icons.report_problem_outlined, '/clothesScreen'),
                     _buildDashboardButton(context, 'Diversos',
-                        Icons.location_on_outlined, '/othersScreen'),
+                        Icons.devices_other_outlined, '/othersScreen'),
                   ],
                 ),
               ),
