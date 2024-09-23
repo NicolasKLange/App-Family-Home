@@ -13,6 +13,11 @@ import './services/shopping/shopping.dart';
 import './services/events/events.dart';
 import './services/notices/notices.dart';
 import './services/location/location.dart';
+import './services/shopping/supermarket.dart';
+import './services/shopping/others.dart';
+import './services/shopping/pharmacy.dart';
+import './services/shopping/school.dart';
+import './services/shopping/clothes.dart';
 
 void main() async {
   // INICIALIZA OPERAÇÕES ASSÍNCRONAS
@@ -53,6 +58,11 @@ class MyApp extends StatelessWidget {
         '/eventsScreen': (context) => const EventsScreen(),
         '/noticesScreen': (context) => const NoticesScreen(),
         '/locationScreen': (context) => const LocationScreen(),
+        '/supermarketScreen': (context) => const SupermarketScreen(),
+        '/pharmacyScreen': (context) => const PharmacyScreen(),
+        '/clothesScreen': (context) => const ClothesScreen(),
+        '/schoolScreen': (context) => const SchoolScreen(),
+        '/othersScreen': (context) => const OthersScreen(),
       },
     );
   }
