@@ -31,3 +31,4 @@ flutter:
 
   assets:
     - lib/assets/icons/logo.png
+    - lib/assets/backgrouds/Mercado.jpg

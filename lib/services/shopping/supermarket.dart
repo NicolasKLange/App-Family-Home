@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:family_home/assets/button_styles.dart';
 import 'package:family_home/assets/customHeader.dart';
+import 'package:family_home/assets/customDialog.dart';
 
 class SupermarketScreen extends StatefulWidget {
   const SupermarketScreen({super.key});
@@ -10,11 +11,7 @@ class SupermarketScreen extends StatefulWidget {
 }
 
 class _SupermarketScreenState extends State<SupermarketScreen> {
-  List<Map<String, dynamic>> _shoppingList = [
-    // Lista inicial de exemplo
-    {'item': '2 pacote de macarrão', 'checked': false},
-    {'item': 'arroz', 'checked': false},
-  ];
+  List<Map<String, dynamic>> _shoppingList = [];
 
   // Função para adicionar novo item
   void _addItem(String newItem) {
@@ -23,33 +20,18 @@ class _SupermarketScreenState extends State<SupermarketScreen> {
     });
   }
 
-  // Mostra um diálogo para adicionar um novo item
+  // Mostra um diálogo para adicionar um novo item com estilo personalizado
   void _showAddItemDialog() {
     TextEditingController itemController = TextEditingController();
 
-    showDialog(
+    showCustomAddItemDialog(
       context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text("Adicionar Item"),
-          content: TextField(
-            controller: itemController,
-            decoration: const InputDecoration(
-              hintText: "Digite o nome do item",
-            ),
-          ),
-          actions: [
-            ElevatedButton(
-              onPressed: () {
-                if (itemController.text.isNotEmpty) {
-                  _addItem(itemController.text);
-                }
-                Navigator.of(context).pop();
-              },
-              child: const Text("Adicionar"),
-            ),
-          ],
-        );
+      itemController: itemController,
+      onAdd: () {
+        if (itemController.text.isNotEmpty) {
+          _addItem(itemController.text);
+        }
+        Navigator.of(context).pop();
       },
     );
   }
