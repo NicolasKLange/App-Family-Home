@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:family_home/assets/button_styles.dart';
+import 'package:family_home/assets/buttonStyles.dart';
 import 'package:family_home/assets/customHeader.dart';
 import 'package:family_home/assets/customDialog.dart';
 
@@ -73,7 +73,7 @@ class _SupermarketScreenState extends State<SupermarketScreen> {
                 margin: const EdgeInsets.symmetric(horizontal: 30),
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.5),
+                  color: const Color(0xFFEDE8E8).withOpacity(0.5),
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
                     color: const Color(0xFF2B3649),
@@ -111,14 +111,14 @@ class _SupermarketScreenState extends State<SupermarketScreen> {
                             });
                           },
                           controlAffinity: ListTileControlAffinity.leading,
-                          activeColor: Colors.blueAccent,
-                          checkColor: Colors.white,
+                          activeColor: const Color(0xFF577096),
+                          checkColor: const Color(0xFFEDE8E8),
                           title: Text(
                             _shoppingList[index]['item'],
                             style: TextStyle(
                               color: _shoppingList[index]['checked']
-                                  ? Colors.green
-                                  : const Color(0xFF2B3649),
+                                  ? const Color(0xFF577096)
+                                  : const Color(0xFF577096),
                               decoration: _shoppingList[index]['checked']
                                   ? TextDecoration.lineThrough
                                   : TextDecoration.none,

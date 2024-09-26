@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:family_home/assets/button_styles.dart';
+import 'package:family_home/assets/buttonStyles.dart';
 import 'package:family_home/assets/customHeader.dart';
 
 class LocationScreen extends StatefulWidget {
@@ -10,7 +10,6 @@ class LocationScreen extends StatefulWidget {
 }
 
 class _LocationScreenState extends State<LocationScreen> {
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(

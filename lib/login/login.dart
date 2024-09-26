@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:family_home/assets/button_styles.dart';
+import 'package:family_home/assets/buttonStyles.dart';
 
 //CLASSE DA TELA DE LOGIN
 class LoginScreen extends StatefulWidget {

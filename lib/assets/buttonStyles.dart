@@ -10,9 +10,11 @@ class ButtonStyles {
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(15),
     ),
+    elevation: 8, // Adiciona a sombra ao botão
+    shadowColor: Colors.black.withOpacity(0.4), // Cor da sombra
   );
 
-  // Estilo para botões secundários
+  // Estilo para botões secundários (OutlinedButton)
   static final ButtonStyle secondaryButton = OutlinedButton.styleFrom(
     backgroundColor: const Color(0xFFA8BEE0),
     foregroundColor: const Color(0xFF2B3649),
@@ -22,13 +24,17 @@ class ButtonStyles {
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(15),
     ),
+    elevation: 8, // Adiciona a sombra ao botão
+    shadowColor: Colors.black.withOpacity(0.4), // Cor da sombra
   );
 
-  // Estilo para botões de texto
+  // Estilo para botões de texto (TextButton)
   static final ButtonStyle textButton = TextButton.styleFrom(
     backgroundColor: const Color(0xFF577096),
     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
     textStyle: const TextStyle(fontSize: 16),
+    elevation: 8, // Adiciona a sombra ao botão
+    shadowColor: Colors.black.withOpacity(0.4), // Cor da sombra
   );
 
   // Estilo para TextField
