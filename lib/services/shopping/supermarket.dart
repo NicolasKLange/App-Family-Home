@@ -92,8 +92,8 @@ class _SupermarketScreenState extends State<SupermarketScreen> {
                         IconButton(
                           icon: const Icon(Icons.add),
                           color: const Color(0xFF2B3649),
-                          onPressed:
-                              _showAddItemDialog, // Chama o diálogo para adicionar item
+                          onPressed: _showAddItemDialog,
+                          // Chama o diálogo para adicionar item
                         ),
                       ],
                     ),

@@ -27,7 +27,7 @@ class CustomScreenHeader extends StatelessWidget {
         //BORDA ARREDONDADA
         Container(
           width: double.infinity,
-          height: MediaQuery.of(context).size.height * 0.9,
+          height: MediaQuery.of(context).size.height * 2.0,
           decoration: const BoxDecoration(
             //COR FUNDO PARTE INFERIOR
             color: Color(0xFFA8BEE0),
