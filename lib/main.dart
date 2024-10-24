@@ -1,3 +1,4 @@
+import 'package:family_home/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -61,6 +62,7 @@ class MyApp extends StatelessWidget {
         '/pharmacyScreen': (context) => const PharmacyScreen(),
         '/schoolScreen': (context) => const SchoolScreen(),
         '/othersScreen': (context) => const OthersScreen(),
+        '/login_page': (context) =>  LoginPage(),
       },
     );
   }
@@ -82,7 +84,7 @@ class _SplashScreenState extends State<SplashScreen> {
     // INICIA TEMPORIZADOR DE 2 SEGUNDOS PARA ABRIR O APP
     Future.delayed(const Duration(seconds: 2), () {
       // APÓS OS 2 SEGUNDOS, REDIRECIONA PARA A TELA DE LOGIN
-      Navigator.pushReplacementNamed(context, '/loginScreen');
+      Navigator.pushReplacementNamed(context, '/login_page');
     });
   }
 
